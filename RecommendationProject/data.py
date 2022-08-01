@@ -1,5 +1,5 @@
 from os import link
-genres = ['action', 'action-adventure', 'shooter firstperson', 'shooter thirdperson', 'rpg firstperson', 'rpg thirdperson', 'rpg turnbased', 'stategy', 'simulation']
+genres = ['action', 'action-adventure', 'shooter firstperson', 'shooter thirdperson', 'rpg firstperson', 'rpg thirdperson', 'rpg turnbased', 'strategy', 'simulation']
 
 games = [['action', 'Elden Ring', '10', 'Bandai Namco'], 
 ['action', 'Star Wars Jedi: Fallen Order', '9', 'EA'], 
@@ -11,7 +11,7 @@ games = [['action', 'Elden Ring', '10', 'Bandai Namco'],
 ['rpg thirdperson', 'The Witcher 3: Wild Hunt', '10', 'CD Project Red Studio'], ['rpg thirdperson', 'Mass Effect Legendary Edition', '9', 'EA'], 
 ['rpg turnbased', 'Yakuza: Like A Dragon', '9', 'Sega'], 
 ['rpg turnbased', 'Dragon Quest XI', '9', 'Square Enix'], 
-['stategy', 'Total War: Three Kingdoms' '8', 'Sega'], 
-['stategy', 'Age of Empires IV', '8', 'Xbox Game Studios'], 
+['strategy', 'Total War: Three Kingdoms' '8', 'Sega'], 
+['strategy', 'Age of Empires IV', '8', 'Xbox Game Studios'], 
 ['simulation', 'Forza Horizon Five', '9', 'Xbox Game Studios'], 
 ['simulation', 'Microsoft Flight Simulator', '7', 'Xbox Game Studios']]
