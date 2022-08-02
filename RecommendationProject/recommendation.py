@@ -1,4 +1,5 @@
 from data import games, genres
+
 ### Functions ###
 def genre_dictionary(lst):
     genre_dict = {}
@@ -22,16 +23,15 @@ def display(lst):
     for i in lst:
         print('\n')
         print(f'Title: {i[0]}')
-        print(f'Review Score: {i[1]} / 2')
+        print(f'Review Score: {i[1]}')
         print(f'Dev: {i[-1]}')
-        print('\n')
 
 ### Global Values ###
 game_shelf = game_dictionary(games)
 
 
 def main():
- 
+
     ### Genre Selection ###
     while True:
         genre_types = input(f"What would you like to play? \n \n{genre_dictionary(genres)} \n \n Enter first letter: ").strip().lower()
@@ -43,7 +43,7 @@ def main():
             break
 
     ### Subselection ###
-    print(f"Your options are ", end="")
+    print(f"Your options are: ", end="")
     for i in range(len(genre_choices)):
         if i < len(genre_choices) - 1:
             print(genre_choices[i], end=", ")
@@ -51,22 +51,34 @@ def main():
         print("and " + genre_choices[i] + ".", end="\n")
     
     ### Confirmation of Choice ###
-    genre_choice = input("Which one \n Enter Name: " ).strip().lower()
+    genre_choice = input("What would you like to see? \n Enter Name: " ).strip().lower()
     while True:
         if genre_choice in genre_choices:
-            confirmation = input(f"Do you want to see {genre_choice} games? \n y/n: ".strip().lower())
+            confirmation = input(f"Are you sure you want to see {genre_choice} games? \n y/n: ".strip().lower())
             break
         else:
-            print("No such option available.")
-        genre_choice = input("Which one do you want? \n Enter Name: " ).strip().lower()
-    
+            genre_choice = input(f"Please choose {genre_choices[i]} \n Enter Name: " ).strip().lower()
+
     ### Game Selection ###
     while True:
         if confirmation == 'y':
-            print(f"The selection of {genre_choice} games are: ")
+            print(f"\n The selection of {genre_choice} games are: ")
             display(game_shelf[genre_choice])
             while True:
-                search = input(" Would to keep looking? \n Y/N" )
+                search = input(" Would to keep looking? \n y/n: " )
+                if search == "y":
+                    main()
+                elif search == "n":
+                    print("\n Good Bye!")
+                    quit()
+                    
+
+        elif confirmation == 'n':
+            main()
+
+        else:
+            print("Please enter y/n ")
+            confirmation = input(f"Are you sure you want to see {genre_choice} games? \n y/n: ".strip().lower())
 
 
     
